@@ -4,27 +4,80 @@ de las mismas posiciones de los arreglos anteriores*/
 #include "iostream"
 #include "stdlib.h"
 #include "stdio.h"
-#include "conio.h"
+#include "string.h"
+#include "time.h"
 
 using namespace std;
 
+void ArregloLlenar(int arr[10]);
+void ArregloSumar(int arr1[10], int arr2[10], int arrResultante[10]);
+void ArregloMostrar(int arr[10]);
+
 int main()
 {
-    int arreglo[]{1, 3, 5};
-    int arreglo2[]{4, 5, 6};
-    int SumaArreglo[2];
-    int suma = 0;
+    cout<<endl;
+    cout<<endl;
+    cout<<"PROGRAMA QUE SUMA DOS ARREGLOS Y MUESTRA EL RESULTADO EN UN TERCER ARREGLO"<<endl;
+    cout<<endl;
 
-    //suma de arreglos
-    for (int i = 0; i < 3; i++)
-    {
-        SumaArreglo[i] = arreglo[i] + arreglo2[i];
-    }
-    // Y mostramos el resultado
-    cout << "La suma es: " << endl;
-    for (int i = 0; i < 3; i++)
-        cout << SumaArreglo[i] << " ";
-    
+    //Declarando los 3 Arreglos
+    int Arreglo1[10];
+    int Arreglo2[10];
+    int ArregloSuma[10];
+
+    //Iniciando el random
+    srand(time(NULL));
+
+    //Llena y muestre el Primer Arreglo
+    ArregloLlenar(Arreglo1);
+    cout << "Los primeros numeros son: " << endl;
+    ArregloMostrar(Arreglo1);
+    cout << endl;
+
+    //Llena y muestre el Segundo Arreglo
+    ArregloLlenar(Arreglo2);
+    cout << "Los segundos numeros son: " << endl;
+    ArregloMostrar(Arreglo2);
+    cout << endl;
+
+    //Suma los 2 Arreglos y muestra el Arreglo Resultante
+
+    ArregloSumar(Arreglo1, Arreglo2, ArregloSuma);
+
+    cout << "El resultado de la suma de los dos Arreglos es: " << endl;
+    ArregloMostrar(ArregloSuma);
+    cout<<endl;
+    cout<<endl;
 
     return 0;
+}
+
+//verificando si el elemento es menor
+void ArregloLlenar(int arr[10])
+{
+    int i;
+
+    for (int i = 0; i < 10; i++)
+    {
+        arr[i] = 1 + rand() % (10 - 1);
+    }
+}
+
+//Realizando suma de arreglos
+void ArregloSumar(int arr1[10], int arr2[10], int arrResultante[10])
+{
+    int i;
+    for (int i = 0; i < 10; i++)
+    {
+        arrResultante[i] = arr1[i] + arr2[i];
+    }
+}
+
+//Muestra el arreglo
+void ArregloMostrar(int arr[10])
+{
+    int i;
+    for (int i = 0; i < 10; i++)
+        cout << arr[i] << " ";
+        cout << endl;
 }
