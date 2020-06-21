@@ -9,6 +9,8 @@ de las mismas posiciones de los arreglos anteriores*/
 
 using namespace std;
 
+//Llamando a las funciones
+
 void ArregloLlenar(int arr[10]);
 void ArregloSumar(int arr1[10], int arr2[10], int arrResultante[10]);
 void ArregloMostrar(int arr[10]);
