@@ -1,3 +1,6 @@
+/*Dado dos arreglos de igual longitud, escriba un programa que genere un tercer arreglo, cuyos valores correspondan a la suma de los elementos
+de las mismas posiciones de los arreglos anteriores*/
+
 #include "iostream"
 #include "stdlib.h"
 #include "stdio.h"
